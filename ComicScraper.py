@@ -17,4 +17,7 @@ for i in range(l, h+1):
 		img_url = 'http:' + img.get('src')
 		print(img_url)
 		img_url = img_url.strip()
-		urllib.request.urlretrieve(img_url, 'Comic' + str(i) + '.jpeg')
+		try:
+			urllib.request.urlretrieve(img_url, 'Comic' + str(i) + '.jpeg')
+		except:
+			print('Cant download this...Skipping')
